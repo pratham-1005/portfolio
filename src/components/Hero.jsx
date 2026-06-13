@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import profileImg from "../assets/profile.png";
 
 const roles = [
   "AI Researcher",
   "Machine Learning Engineer",
   "Generative AI Developer",
-  "Multi-Agent Systems Builder",
+  "Agentic AI Builder",
 ];
 
 function Hero() {
@@ -21,69 +22,194 @@ function Hero() {
 
   return (
     <section
-      id="Hero"
-      className="min-h-screen flex items-center"
+      id="home"
+      className="min-h-screen flex items-center pt-24 px-6"
     >
-      <div className="container-width px-6">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-cyan-400 tracking-widest mb-5"
+        {/* LEFT SIDE */}
+
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
         >
-          IIT GUWAHATI • AI & DATA SCIENCE
-        </motion.p>
+          <p className="font-mono text-cyan-400 mb-4">
+            ● IIT GUWAHATI | DATA SCIENCE & AI
+          </p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-6xl md:text-8xl font-black"
+          <p className="font-mono text-red-500 mb-4">
+            $ whoami
+          </p>
+
+          <h1
+            className="
+            text-6xl
+            md:text-8xl
+            font-black
+            leading-none
+            mb-6
+            bg-gradient-to-r
+            from-red-500
+            via-pink-500
+            to-cyan-400
+            text-transparent
+            bg-clip-text
+          "
+          >
+            Pratham
+            <br />
+            Mittal
+          </h1>
+
+          <motion.h2
+            key={roleIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="
+            text-2xl
+            md:text-3xl
+            text-gray-300
+            font-mono
+            mb-8
+          "
+          >
+            {roles[roleIndex]}
+          </motion.h2>
+
+          <p
+            className="
+            text-gray-400
+            leading-relaxed
+            text-lg
+            max-w-2xl
+          "
+          >
+            Building intelligent systems at the
+            intersection of Machine Learning,
+            Generative AI, Agentic Workflows,
+            Scientific Computing and Data Science.
+          </p>
+
+          <div className="flex flex-wrap gap-5 mt-10">
+
+            <a
+              href="#projects"
+              className="
+              px-8
+              py-4
+              rounded-xl
+              bg-red-600
+              hover:bg-red-500
+              transition-all
+              shadow-[0_0_35px_rgba(255,23,68,0.4)]
+            "
+            >
+              View Projects
+            </a>
+
+            <a
+              href="/resume.pdf"
+              className="
+              px-8
+              py-4
+              rounded-xl
+              border
+              border-cyan-500
+              hover:bg-cyan-500/10
+              transition-all
+            "
+            >
+              Download Resume
+            </a>
+
+          </div>
+
+          <div className="grid grid-cols-2 gap-5 mt-12">
+
+            <div className="glass rounded-xl p-5">
+              <h3 className="text-red-400 font-mono">
+                Research
+              </h3>
+
+              <p className="text-gray-300 mt-2">
+                NIT Silchar
+              </p>
+            </div>
+
+            <div className="glass rounded-xl p-5">
+              <h3 className="text-red-400 font-mono">
+                Education
+              </h3>
+
+              <p className="text-gray-300 mt-2">
+                IIT Guwahati
+              </p>
+            </div>
+
+            <div className="glass rounded-xl p-5">
+              <h3 className="text-red-400 font-mono">
+                Projects
+              </h3>
+
+              <p className="text-gray-300 mt-2">
+                AI • ML • DS
+              </p>
+            </div>
+
+            <div className="glass rounded-xl p-5">
+              <h3 className="text-red-400 font-mono">
+                Certifications
+              </h3>
+
+              <p className="text-gray-300 mt-2">
+                10+
+              </p>
+            </div>
+
+          </div>
+
+        </motion.div>
+
+        {/* RIGHT SIDE */}
+
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="flex justify-center"
         >
-          PRATHAM
-          <br />
-          MITTAL
-        </motion.h1>
+          <div className="relative">
 
-        <motion.h2
-          key={roleIndex}
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mt-8 text-2xl md:text-4xl text-violet-400 font-semibold"
-        >
-          {roles[roleIndex]}
-        </motion.h2>
+            <div
+              className="
+              absolute
+              inset-0
+              rounded-full
+              bg-red-500/20
+              blur-3xl
+              scale-125
+            "
+            />
 
-        <p className="max-w-3xl text-gray-400 mt-8 text-lg leading-relaxed">
-          Building intelligent systems at the intersection
-          of machine learning, simulation engineering,
-          generative AI, and autonomous agent
-          architectures.
-        </p>
+            <img
+              src={profileImg}
+              alt="Pratham Mittal"
+              className="
+              relative
+              w-[320px]
+              h-[320px]
+              md:w-[420px]
+              md:h-[420px]
+              object-cover
+              rounded-full
+              border-4
+              border-red-500/30
+              shadow-[0_0_80px_rgba(255,23,68,0.4)]
+            "
+            />
 
-        <div className="flex flex-wrap gap-5 mt-12">
+          </div>
+        </motion.div>
 
-          <a
-            href="#Projects"
-            className="px-7 py-3 rounded-xl bg-cyan-500 text-black font-semibold hover:scale-105 transition"
-          >
-            View Research
-          </a>
-
-          <a
-            href="/resume.pdf"
-            className="px-7 py-3 rounded-xl border border-cyan-500/30 hover:border-cyan-400"
-          >
-            Download Resume
-          </a>
-
-          <a
-            href="#Contact"
-            className="px-7 py-3 rounded-xl border border-violet-500/30 hover:border-violet-400"
-          >
-            Contact Me
-          </a>
-
-        </div>
       </div>
     </section>
   );

@@ -27,29 +27,43 @@ function CursorGlow() {
   }, []);
 
   return (
-    <div
-      className="
-      hidden
-      md:block
-      fixed
-      pointer-events-none
-      z-50
-      "
-      style={{
-        left: position.x - 120,
-        top: position.y - 120,
-      }}
-    >
+    <>
       <div
         className="
-        w-[240px]
-        h-[240px]
+        pointer-events-none
+        fixed
+        z-50
+        w-96
+        h-96
         rounded-full
-        bg-cyan-500/10
-        blur-[90px]
-        "
+        blur-3xl
+      "
+        style={{
+          left: position.x - 190,
+          top: position.y - 190,
+          background:
+            "radial-gradient(circle, rgba(255,23,68,0.15), transparent 70%)",
+        }}
       />
-    </div>
+
+      <div
+        className="
+        pointer-events-none
+        fixed
+        z-50
+        w-48
+        h-48
+        rounded-full
+        blur-2xl
+      "
+        style={{
+          left: position.x - 95,
+          top: position.y - 95,
+          background:
+            "radial-gradient(circle, rgba(0,229,255,0.10), transparent 70%)",
+        }}
+      />
+    </>
   );
 }
 

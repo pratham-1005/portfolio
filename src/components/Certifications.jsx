@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 const certifications = [
@@ -8,23 +7,23 @@ const certifications = [
   },
 
   {
-    title: "Innovating with Google Cloud AI",
-    issuer: "Google Cloud",
-  },
-
-  {
     title: "Programming with Generative AI",
-    issuer: "Google",
+    issuer: "Coursera",
   },
 
   {
     title: "Generative AI Primer",
-    issuer: "Google",
+    issuer: "Coursera",
   },
 
   {
     title: "Data Analysis with Python",
-    issuer: "IBM",
+    issuer: "Coursera",
+  },
+
+  {
+    title: "Data Management & Visualization",
+    issuer: "Coursera",
   },
 
   {
@@ -33,106 +32,139 @@ const certifications = [
   },
 
   {
-    title: "Agentic AI Development",
-    issuer: "Qoherenz",
+    title: "Innovating with Google Cloud AI",
+    issuer: "Google Cloud",
   },
 
   {
-    title: "AI-Powered Development",
-    issuer: "Qoherenz",
-  },
-
-  {
-    title: "Data Management & Visualization",
-    issuer: "IBM",
-  },
-
-  {
-    title: "Google Data Transformation",
+    title: "Exploring Data Transformation with Google",
     issuer: "Google",
   },
 
   {
-    title: "Introduction to Generative AI",
-    issuer: "Google",
+    title: "Qoherenz Internship Program 2025",
+    issuer: "Qoherenz",
   },
 
   {
-    title: "Campus Ambassador",
+    title: "Guesss India Campus Ambassador",
     issuer: "Guesss India",
   },
 ];
 
 function Certifications() {
-  const [showAll, setShowAll] = useState(false);
-
-  const visibleCerts = showAll
-    ? certifications
-    : certifications.slice(0, 6);
-
   return (
     <section
-      id="Certifications"
-      className="py-32 px-6"
+      id="certifications"
+      className="py-28 px-6"
     >
-      <div className="container-width">
+      <div className="max-w-7xl mx-auto">
 
-        <h2 className="text-4xl font-bold mb-12">
+        <p className="font-mono text-cyan-400 mb-3">
+          $ ls certifications/
+        </p>
+
+        <h2
+          className="
+          text-5xl
+          md:text-6xl
+          font-black
+          font-mono
+          mb-16
+          bg-gradient-to-r
+          from-red-500
+          via-pink-500
+          to-violet-500
+          text-transparent
+          bg-clip-text
+        "
+        >
           Certifications
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          {visibleCerts.map((cert, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="
-              glass
-              glow
-              p-6
-              rounded-3xl
-              hover:-translate-y-2
-              transition-all
+        <div
+          className="
+          grid
+          md:grid-cols-2
+          lg:grid-cols-3
+          gap-8
+        "
+        >
+          {certifications.map(
+            (cert, index) => (
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  delay:
+                    index * 0.05,
+                }}
+                className="
+                bg-black/70
+                backdrop-blur-xl
+                border
+                border-cyan-500/20
+                rounded-2xl
+                p-6
+                hover:border-red-500/40
+                hover:-translate-y-2
+                transition-all
+                duration-300
               "
-            >
-              <p className="text-cyan-400 text-sm">
-                VERIFIED
-              </p>
+              >
+                <div
+                  className="
+                  text-red-400
+                  font-mono
+                  mb-4
+                "
+                >
+                  CERT
+                </div>
 
-              <h3 className="font-bold text-lg mt-4">
-                {cert.title}
-              </h3>
+                <h3
+                  className="
+                  text-xl
+                  font-bold
+                  mb-4
+                  leading-snug
+                "
+                >
+                  {cert.title}
+                </h3>
 
-              <p className="text-violet-400 mt-3">
-                {cert.issuer}
-              </p>
-            </motion.div>
-          ))}
+                <p
+                  className="
+                  text-cyan-400
+                  font-mono
+                "
+                >
+                  {cert.issuer}
+                </p>
 
-        </div>
-
-        <div className="text-center mt-10">
-
-          <button
-            onClick={() =>
-              setShowAll(!showAll)
-            }
-            className="
-            px-6
-            py-3
-            rounded-xl
-            border
-            border-cyan-500/20
-            hover:border-cyan-400
-            "
-          >
-            {showAll
-              ? "Show Less"
-              : "View All Certifications"}
-          </button>
-
+                <div
+                  className="
+                  mt-6
+                  text-gray-500
+                  font-mono
+                  text-sm
+                "
+                >
+                  verified credential
+                </div>
+              </motion.div>
+            )
+          )}
         </div>
 
       </div>

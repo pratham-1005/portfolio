@@ -1,64 +1,85 @@
-import { useEffect, useState } from "react";
-
-const messages = [
-  "Initializing Neural Core...",
-  "Loading AI Modules...",
-  "Connecting Knowledge Graph...",
-  "Launching Portfolio...",
-];
+import { motion } from "framer-motion";
 
 function LoadingScreen() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) =>
-        prev < messages.length - 1
-          ? prev + 1
-          : prev
-      );
-    }, 600);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div
       className="
-      h-screen
+      fixed
+      inset-0
       bg-black
       flex
-      flex-col
-      justify-center
       items-center
-      "
+      justify-center
+      z-[9999]
+    "
     >
-      <div className="font-mono text-cyan-400 text-xl">
+      <div className="text-center">
 
-        {messages[index]}
-
-      </div>
-
-      <div
-        className="
-        mt-10
-        w-[300px]
-        h-[5px]
-        bg-white/10
-        rounded-full
-        overflow-hidden
-        "
-      >
-        <div
-          className="
-          h-full
-          bg-cyan-400
-          animate-pulse
-          "
-          style={{
-            width: `${(index + 1) * 25}%`,
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "280px" }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
           }}
+          className="
+          h-1
+          bg-gradient-to-r
+          from-red-500
+          via-pink-500
+          to-cyan-400
+          rounded-full
+          mx-auto
+        "
         />
+
+        <motion.h1
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 0.4,
+          }}
+          className="
+          text-4xl
+          md:text-6xl
+          font-black
+          mt-10
+          bg-gradient-to-r
+          from-red-500
+          via-pink-500
+          to-cyan-400
+          text-transparent
+          bg-clip-text
+        "
+        >
+          PRATHAM MITTAL
+        </motion.h1>
+
+        <motion.p
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            delay: 1,
+          }}
+          className="
+          mt-5
+          font-mono
+          text-cyan-400
+        "
+        >
+          booting neural_core.exe...
+        </motion.p>
+
       </div>
     </div>
   );

@@ -5,11 +5,13 @@ html {
 }
 
 :root {
-  --bg: #050505;
-  --card: rgba(255, 255, 255, 0.03);
+  --bg: #030303;
 
-  --primary: #00e5ff;
-  --secondary: #8b5cf6;
+  --red: #ff1744;
+  --red-glow: rgba(255, 23, 68, 0.35);
+
+  --cyan: #00e5ff;
+  --cyan-glow: rgba(0, 229, 255, 0.25);
 
   --text: #f8fafc;
 }
@@ -20,19 +22,55 @@ html {
   box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, sans-serif;
+
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
   overflow-x: hidden;
+
+  background-image:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 0, 60, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(0, 229, 255, 0.06),
+      transparent 40%
+    );
+
+  background-attachment: fixed;
 }
 
 section {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 120px;
 }
 
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Scrollbar */
+
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -42,31 +80,142 @@ section {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(
     to bottom,
-    #00e5ff,
-    #8b5cf6
+    #ff1744,
+    #00e5ff
   );
+
   border-radius: 20px;
 }
+
+/* Glass Cards */
 
 .glass {
   background: rgba(255,255,255,0.03);
 
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(18px);
 
   border: 1px solid rgba(255,255,255,0.08);
 }
 
 .glow {
   box-shadow:
-    0 0 15px rgba(0,229,255,.15),
-    0 0 30px rgba(139,92,246,.08);
+    0 0 20px rgba(255,23,68,.15),
+    0 0 40px rgba(255,23,68,.08);
 }
 
-.neon-text {
+/* Layout */
+
+.container-width {
+  max-width: 1280px;
+  margin: auto;
+}
+
+/* Terminal Styling */
+
+.terminal {
+  font-family:
+    "JetBrains Mono",
+    monospace;
+}
+
+.terminal-green {
+  color: #22c55e;
+}
+
+.terminal-red {
+  color: #ff1744;
+}
+
+.terminal-cyan {
   color: #00e5ff;
 }
 
-.container-width {
-  max-width: 1200px;
-  margin: auto;
+/* Hacker Grid */
+
+.grid-bg {
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+}
+
+/* Animated Glow */
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow:
+      0 0 10px rgba(255,23,68,.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 35px rgba(255,23,68,.45);
+  }
+
+  100% {
+    box-shadow:
+      0 0 10px rgba(255,23,68,.2);
+  }
+}
+
+.glow-red {
+  animation:
+    pulseGlow 3s infinite;
+}
+
+/* Text Gradient */
+
+.gradient-text {
+  background:
+    linear-gradient(
+      90deg,
+      #ff1744,
+      #ff4d6d,
+      #00e5ff
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Selection */
+
+::selection {
+  background: rgba(
+    255,
+    23,
+    68,
+    0.35
+  );
+
+  color: white;
+}
+
+/* Animations */
+
+.fade-up {
+  animation:
+    fadeUp 0.7s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
 }
