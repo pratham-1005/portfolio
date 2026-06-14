@@ -20,7 +20,7 @@ tech: [
 {
 title: "Agentic AI Intern",
 organization: "Qoherenz",
-duration: "October 2025 - February",
+duration: "October 2025 - February 2026",
 description:
 "Built agentic AI workflows, prompt engineering pipelines, multi-agent systems and AI-powered automation solutions for real-world business applications.",
 tech: [
