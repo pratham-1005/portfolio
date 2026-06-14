@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const educationData = [
   {
     degree:
-      "B.Tech in Data Science & Artificial Intelligence",
+      "B.Sc(Hons.) in Data Science & Artificial Intelligence",
     institute:
       "Indian Institute of Technology Guwahati",
     duration: "2023 - 2027",
@@ -16,6 +16,24 @@ const educationData = [
       "Research",
       "Programming",
       "Analytics",
+    ],
+  },
+
+  {
+    degree:
+      "B.Tech in Computer Science Engineering",
+    institute:
+      "PT. L.R. College of Technology",
+    duration: "2023 - 2027",
+    description:
+      "Pursuing engineering studies in Computer Science and Engineering with focus on programming fundamentals, data structures, algorithms, software development and computer systems. Actively building strong technical expertise alongside academic studies.",
+    highlights: [
+      "Programming",
+      "Data Structures",
+      "Algorithms",
+      "Software Development",
+      "System Design",
+      "Computer Networks",
     ],
   },
 
