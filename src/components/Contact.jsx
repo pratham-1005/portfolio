@@ -120,7 +120,7 @@ function Contact() {
 
               <div>
                 <p className="text-cyan-400 font-mono text-sm mb-2">
-                  LINKEDIN
+                  www.linkedin.com/in/pratham-mittal-6a146a309L
                 </p>
 
                 <a
