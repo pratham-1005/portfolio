@@ -15,24 +15,6 @@ function LoadingScreen() {
     >
       <div className="text-center">
 
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "280px" }}
-          transition={{
-            duration: 2,
-            ease: "easeInOut",
-          }}
-          className="
-          h-1
-          bg-gradient-to-r
-          from-red-500
-          via-pink-500
-          to-cyan-400
-          rounded-full
-          mx-auto
-        "
-        />
-
         <motion.h1
           initial={{
             opacity: 0,
@@ -42,14 +24,11 @@ function LoadingScreen() {
             opacity: 1,
             y: 0,
           }}
-          transition={{
-            delay: 0.4,
-          }}
           className="
-          text-4xl
-          md:text-6xl
+          text-5xl
+          md:text-7xl
           font-black
-          mt-10
+          font-mono
           bg-gradient-to-r
           from-red-500
           via-pink-500
@@ -58,7 +37,7 @@ function LoadingScreen() {
           bg-clip-text
         "
         >
-          PRATHAM MITTAL
+          PRATHAM_AI.exe
         </motion.h1>
 
         <motion.p
@@ -69,16 +48,37 @@ function LoadingScreen() {
             opacity: 1,
           }}
           transition={{
-            delay: 1,
+            delay: 0.5,
           }}
           className="
-          mt-5
+          mt-6
+          text-red-400
           font-mono
-          text-cyan-400
         "
         >
-          booting neural_core.exe...
+          Initializing Neural Systems...
         </motion.p>
+
+        <motion.div
+          initial={{
+            width: 0,
+          }}
+          animate={{
+            width: "320px",
+          }}
+          transition={{
+            duration: 2,
+          }}
+          className="
+          h-1
+          mt-8
+          mx-auto
+          rounded-full
+          bg-gradient-to-r
+          from-red-500
+          to-cyan-400
+        "
+        />
 
       </div>
     </div>

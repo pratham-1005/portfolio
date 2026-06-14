@@ -114,7 +114,7 @@ function Contact() {
                   transition
                 "
                 >
-                  YOUR_EMAIL@gmail.com
+                  parv.m1005@gmail.com
                 </a>
               </div>
 
@@ -124,7 +124,7 @@ function Contact() {
                 </p>
 
                 <a
-                  href="YOUR_LINKEDIN_URL"
+                  href="www.linkedin.com/in/pratham-mittal-6a146a309L"
                   target="_blank"
                   rel="noreferrer"
                   className="
