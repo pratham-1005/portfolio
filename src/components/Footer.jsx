@@ -2,13 +2,13 @@ function Footer() {
   return (
     <footer
       className="
-      py-10
+      py-14
+      mt-24
       border-t
-      border-white/10
-      mt-20
+      border-red-500/10
     "
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="container-width">
 
         <div
           className="
@@ -17,16 +17,18 @@ function Footer() {
           md:flex-row
           justify-between
           items-center
-          gap-4
+          gap-6
         "
         >
           <div>
+
             <h3
               className="
-              text-2xl
+              text-3xl
               font-black
               bg-gradient-to-r
               from-red-500
+              via-pink-500
               to-cyan-400
               text-transparent
               bg-clip-text
@@ -35,9 +37,10 @@ function Footer() {
               Pratham Mittal
             </h3>
 
-            <p className="text-gray-500 mt-2">
-              AI Researcher • Machine Learning Engineer
+            <p className="text-gray-500 mt-3">
+              AI Researcher • Machine Learning Engineer • Generative AI Developer
             </p>
+
           </div>
 
           <div
@@ -46,8 +49,9 @@ function Footer() {
             text-gray-500
           "
           >
-            © 2026 • Built with React & Tailwind
+            © 2026 • Built with React • Tailwind • Framer Motion
           </div>
+
         </div>
 
       </div>

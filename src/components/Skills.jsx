@@ -2,37 +2,7 @@ import { motion } from "framer-motion";
 
 const skillGroups = [
   {
-    title: "programming",
-    skills: [
-      "Python",
-      "Java",
-      "C",
-      "JavaScript",
-      "Linux",
-      "Git",
-    ],
-    color: "red",
-  },
-
-  {
-    title: "machine_learning_and_data_science",
-    skills: [
-      "Machine Learning",
-      "Data Analysis",
-      "Statistical Analysis",
-      "Data Modeling",
-      "Data Mining",
-      "Scikit-Learn",
-      "XGBoost",
-      "Feature Engineering",
-      "Time Series Analysis",
-      "Predictive Modeling",
-    ],
-    color: "cyan",
-  },
-
-  {
-    title: "generative_ai_and_agentic_ai",
+    title: "Artificial Intelligence & Generative AI",
     skills: [
       "Generative AI",
       "Prompt Engineering",
@@ -45,24 +15,53 @@ const skillGroups = [
       "MCP",
       "AI-Powered Development",
     ],
-    color: "red",
   },
 
   {
-    title: "cloud_and_deployment",
+    title: "Machine Learning & Data Science",
+    skills: [
+      "Machine Learning",
+      "Data Analysis",
+      "Statistical Analysis",
+      "Data Modeling",
+      "Data Mining",
+      "Scikit-Learn",
+      "XGBoost",
+      "Feature Engineering",
+      "Time Series Analysis",
+      "Predictive Modeling",
+    ],
+  },
+
+  {
+    title: "Programming & Development",
+    skills: [
+      "Python",
+      "Java",
+      "C",
+      "JavaScript",
+      "Linux",
+      "Git",
+      "GitHub",
+      "Software Development",
+      "Web Development",
+    ],
+  },
+
+  {
+    title: "Cloud & Deployment",
     skills: [
       "Google Cloud Platform",
       "Docker",
-      "GitHub",
-      "Deployment",
       "Streamlit",
       "Vercel",
+      "Deployment",
+      "Cloud Computing",
     ],
-    color: "cyan",
   },
 
   {
-    title: "research_and_analytics",
+    title: "Research & Scientific Computing",
     skills: [
       "Research",
       "Modeling & Simulation",
@@ -70,12 +69,12 @@ const skillGroups = [
       "Scientific Computing",
       "Information Research",
       "Data Transformation",
+      "COMSOL",
     ],
-    color: "violet",
   },
 
   {
-    title: "cyber_security",
+    title: "Cyber Security",
     skills: [
       "Cybersecurity",
       "Cryptography",
@@ -84,11 +83,10 @@ const skillGroups = [
       "Data Security",
       "Information Security",
     ],
-    color: "violet",
   },
 
   {
-    title: "soft_skills",
+    title: "Leadership & Professional Skills",
     skills: [
       "Leadership",
       "Communication",
@@ -96,8 +94,9 @@ const skillGroups = [
       "Teamwork",
       "Analytical Thinking",
       "Brand Ambassadorship",
+      "Community Building",
+      "Event Management",
     ],
-    color: "violet",
   },
 ];
 
@@ -105,30 +104,49 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-28 px-6"
+      className="py-24"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container-width">
 
-        <p className="font-mono text-cyan-400 mb-3">
-          $ cat skills.json
-        </p>
+        <div className="text-center mb-20">
 
-        <h2
-          className="
-          text-5xl
-          md:text-6xl
-          font-black
-          font-mono
-          mb-16
-          bg-gradient-to-r
-          from-red-500
-          to-violet-500
-          text-transparent
-          bg-clip-text
-        "
-        >
-          Skills & Expertise
-        </h2>
+          <p className="font-mono text-cyan-400 mb-4">
+            $ cat skills.json
+          </p>
+
+          <h2
+            className="
+            text-5xl
+            md:text-7xl
+            font-black
+            mb-6
+            bg-gradient-to-r
+            from-red-500
+            via-pink-500
+            to-cyan-400
+            text-transparent
+            bg-clip-text
+          "
+          >
+            Skills & Expertise
+          </h2>
+
+          <p
+            className="
+            text-gray-400
+            max-w-3xl
+            mx-auto
+            text-lg
+          "
+          >
+            A combination of artificial intelligence,
+            machine learning, software engineering,
+            research and data science skills developed
+            through academic projects, internships,
+            certifications and real-world applications.
+          </p>
+
+        </div>
 
         <div
           className="
@@ -158,42 +176,38 @@ function Skills() {
                 }}
                 className="
                 bg-black/70
+                backdrop-blur-xl
                 border
-                border-cyan-500/20
-                rounded-2xl
-                p-7
-                backdrop-blur-lg
-                hover:border-red-500/40
+                border-red-500/20
+                rounded-3xl
+                p-8
+                hover:border-red-500/50
+                hover:translate-y-[-4px]
                 transition-all
                 duration-300
               "
               >
-                <p
+
+                <div
                   className="
-                  text-red-500
-                  font-mono
-                  text-sm
-                  mb-4
+                  w-12
+                  h-1
+                  bg-gradient-to-r
+                  from-red-500
+                  to-cyan-400
+                  mb-6
                 "
-                >
-                  ~/{group.title}
-                </p>
+                />
 
                 <h3
                   className="
                   text-2xl
                   font-bold
+                  text-white
                   mb-6
-                  font-mono
                 "
                 >
-                  {group.title
-                    .replaceAll("_", " ")
-                    .replace(
-                      /\b\w/g,
-                      (c) =>
-                        c.toUpperCase()
-                    )}
+                  {group.title}
                 </h3>
 
                 <div
@@ -207,30 +221,24 @@ function Skills() {
                     (skill) => (
                       <span
                         key={skill}
-                        className={`
+                        className="
                         px-4
                         py-2
-                        rounded-lg
+                        rounded-xl
+                        border
+                        border-red-500/30
+                        bg-red-500/5
+                        text-red-400
                         text-sm
                         font-mono
-                        border
-
-                        ${
-                          group.color ===
-                          "red"
-                            ? "border-red-500/50 text-red-400"
-                            : group.color ===
-                              "cyan"
-                            ? "border-cyan-500/50 text-cyan-400"
-                            : "border-violet-500/50 text-violet-400"
-                        }
-                      `}
+                      "
                       >
                         {skill}
                       </span>
                     )
                   )}
                 </div>
+
               </motion.div>
             )
           )}

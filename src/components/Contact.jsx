@@ -4,195 +4,281 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="py-32 px-6"
+      className="py-28"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container-width">
 
-        <p className="font-mono text-cyan-400 mb-4">
-          $ establish_connection
-        </p>
+        <div className="text-center mb-20">
 
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="
-          text-6xl
-          md:text-8xl
-          font-black
-          mb-10
-          bg-gradient-to-r
-          from-red-500
-          via-pink-500
-          to-cyan-400
-          text-transparent
-          bg-clip-text
-        "
-        >
-          Let's Build
-          <br />
-          Something Smart.
-        </motion.h2>
+          <p className="font-mono text-cyan-400 mb-4">
+            $ establish_connection
+          </p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="
-          text-gray-400
-          text-xl
-          max-w-3xl
-          mb-16
-          leading-relaxed
-        "
-        >
-          Interested in AI Research, Machine Learning,
-          Generative AI, Data Science or intelligent systems?
-          I'm always open to discussing innovative ideas,
-          collaborations and opportunities.
-        </motion.p>
-
-        <div className="grid md:grid-cols-3 gap-8">
-
-          <motion.a
-            whileHover={{
-              y: -8,
-            }}
-            href="mailto:YOUR_EMAIL"
+          <h2
             className="
-            bg-black/70
-            border
-            border-red-500/30
-            rounded-3xl
-            p-8
-            backdrop-blur-xl
-            hover:border-red-500
-            transition-all
+            text-5xl
+            md:text-7xl
+            font-black
+            mb-6
+            bg-gradient-to-r
+            from-red-500
+            via-pink-500
+            to-cyan-400
+            text-transparent
+            bg-clip-text
           "
           >
-            <p className="text-red-400 font-mono mb-3">
-              EMAIL
-            </p>
+            Let's Build
+            <br />
+            Something Intelligent
+          </h2>
 
-            <h3 className="text-2xl font-bold mb-4">
-              Get In Touch
-            </h3>
-
-            <p className="text-gray-400">
-              Send me an email for opportunities,
-              collaborations or research discussions.
-            </p>
-          </motion.a>
-
-          <motion.a
-            whileHover={{
-              y: -8,
-            }}
-            href="YOUR_LINKEDIN"
-            target="_blank"
-            rel="noreferrer"
+          <p
             className="
-            bg-black/70
-            border
-            border-cyan-500/30
-            rounded-3xl
-            p-8
-            backdrop-blur-xl
-            hover:border-cyan-500
-            transition-all
+            text-gray-400
+            max-w-3xl
+            mx-auto
+            text-lg
+            leading-relaxed
           "
           >
-            <p className="text-cyan-400 font-mono mb-3">
-              LINKEDIN
-            </p>
-
-            <h3 className="text-2xl font-bold mb-4">
-              Professional Network
-            </h3>
-
-            <p className="text-gray-400">
-              Connect with me professionally
-              and follow my AI journey.
-            </p>
-          </motion.a>
-
-          <motion.a
-            whileHover={{
-              y: -8,
-            }}
-            href="YOUR_GITHUB"
-            target="_blank"
-            rel="noreferrer"
-            className="
-            bg-black/70
-            border
-            border-violet-500/30
-            rounded-3xl
-            p-8
-            backdrop-blur-xl
-            hover:border-violet-500
-            transition-all
-          "
-          >
-            <p className="text-violet-400 font-mono mb-3">
-              GITHUB
-            </p>
-
-            <h3 className="text-2xl font-bold mb-4">
-              View Projects
-            </h3>
-
-            <p className="text-gray-400">
-              Explore source code,
-              research projects and AI applications.
-            </p>
-          </motion.a>
+            Interested in Artificial Intelligence,
+            Machine Learning, Generative AI,
+            Data Science or research collaborations?
+            I'm always open to discussing innovative
+            projects, internships, research opportunities
+            and impactful ideas.
+          </p>
 
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+        <div
           className="
-          mt-16
-          border
-          border-red-500/20
-          rounded-3xl
-          p-8
-          bg-black/60
-          backdrop-blur-xl
+          grid
+          lg:grid-cols-2
+          gap-8
         "
         >
-          <p className="font-mono text-red-400 mb-3">
-            STATUS
-          </p>
 
-          <h3 className="text-3xl font-bold mb-4">
-            Currently Open For
-          </h3>
+          {/* LEFT */}
 
-          <div className="flex flex-wrap gap-4 mt-6">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="
+            bg-black/70
+            backdrop-blur-xl
+            border
+            border-red-500/20
+            rounded-3xl
+            p-8
+          "
+          >
 
-            <span className="px-4 py-2 border border-red-500/30 rounded-xl text-red-400">
-              AI Research
-            </span>
+            <p className="text-red-400 font-mono mb-4">
+              CONTACT INFORMATION
+            </p>
 
-            <span className="px-4 py-2 border border-cyan-500/30 rounded-xl text-cyan-400">
-              Machine Learning
-            </span>
+            <h3
+              className="
+              text-3xl
+              font-bold
+              mb-8
+            "
+            >
+              Get In Touch
+            </h3>
 
-            <span className="px-4 py-2 border border-violet-500/30 rounded-xl text-violet-400">
-              Generative AI
-            </span>
+            <div className="space-y-8">
 
-            <span className="px-4 py-2 border border-red-500/30 rounded-xl text-red-400">
-              Data Science
-            </span>
+              <div>
+                <p className="text-red-400 font-mono text-sm mb-2">
+                  EMAIL
+                </p>
 
-          </div>
-        </motion.div>
+                <a
+                  href="mailto:YOUR_EMAIL@gmail.com"
+                  className="
+                  text-xl
+                  text-white
+                  hover:text-red-400
+                  transition
+                "
+                >
+                  YOUR_EMAIL@gmail.com
+                </a>
+              </div>
+
+              <div>
+                <p className="text-cyan-400 font-mono text-sm mb-2">
+                  LINKEDIN
+                </p>
+
+                <a
+                  href="YOUR_LINKEDIN_URL"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="
+                  text-xl
+                  text-white
+                  hover:text-cyan-400
+                  transition
+                "
+                >
+                  LinkedIn Profile
+                </a>
+              </div>
+
+              <div>
+                <p className="text-red-400 font-mono text-sm mb-2">
+                  GITHUB
+                </p>
+
+                <a
+                  href="YOUR_GITHUB_URL"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="
+                  text-xl
+                  text-white
+                  hover:text-red-400
+                  transition
+                "
+                >
+                  GitHub Repository
+                </a>
+              </div>
+
+              <div>
+                <p className="text-cyan-400 font-mono text-sm mb-2">
+                  LOCATION
+                </p>
+
+                <p className="text-xl text-white">
+                  Guwahati, India
+                </p>
+              </div>
+
+            </div>
+
+          </motion.div>
+
+          {/* RIGHT */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="
+            bg-black/70
+            backdrop-blur-xl
+            border
+            border-cyan-500/20
+            rounded-3xl
+            p-8
+          "
+          >
+
+            <p className="text-cyan-400 font-mono mb-4">
+              CURRENT STATUS
+            </p>
+
+            <h3
+              className="
+              text-3xl
+              font-bold
+              mb-6
+            "
+            >
+              Open For Opportunities
+            </h3>
+
+            <p
+              className="
+              text-gray-400
+              leading-relaxed
+              mb-8
+            "
+            >
+              Currently exploring opportunities
+              in Artificial Intelligence,
+              Machine Learning,
+              Generative AI,
+              Data Science,
+              Research Internships,
+              Software Engineering
+              and Agentic AI Systems.
+            </p>
+
+            <div
+              className="
+              flex
+              flex-wrap
+              gap-4
+            "
+            >
+
+              <span className="px-4 py-2 rounded-xl border border-red-500/30 text-red-400">
+                AI Research
+              </span>
+
+              <span className="px-4 py-2 rounded-xl border border-cyan-500/30 text-cyan-400">
+                Machine Learning
+              </span>
+
+              <span className="px-4 py-2 rounded-xl border border-red-500/30 text-red-400">
+                Generative AI
+              </span>
+
+              <span className="px-4 py-2 rounded-xl border border-cyan-500/30 text-cyan-400">
+                Data Science
+              </span>
+
+              <span className="px-4 py-2 rounded-xl border border-red-500/30 text-red-400">
+                Research
+              </span>
+
+              <span className="px-4 py-2 rounded-xl border border-cyan-500/30 text-cyan-400">
+                Software Engineering
+              </span>
+
+            </div>
+
+            <div
+              className="
+              mt-10
+              border-t
+              border-white/10
+              pt-8
+            "
+            >
+              <p className="text-gray-500">
+                Building intelligent systems,
+                research-driven solutions and
+                next-generation AI applications.
+              </p>
+            </div>
+
+          </motion.div>
+
+        </div>
 
       </div>
     </section>

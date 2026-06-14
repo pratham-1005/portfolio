@@ -5,13 +5,10 @@ html {
 }
 
 :root {
-  --bg: #030303;
+  --bg: #020202;
 
   --red: #ff1744;
-  --red-glow: rgba(255, 23, 68, 0.35);
-
   --cyan: #00e5ff;
-  --cyan-glow: rgba(0, 229, 255, 0.25);
 
   --text: #f8fafc;
 }
@@ -41,53 +38,96 @@ body {
 
   background-image:
     radial-gradient(
-      circle at 20% 20%,
-      rgba(255, 0, 60, 0.08),
-      transparent 40%
+      circle at 15% 15%,
+      rgba(255,0,60,0.08),
+      transparent 35%
     ),
     radial-gradient(
-      circle at 80% 30%,
-      rgba(0, 229, 255, 0.06),
+      circle at 85% 20%,
+      rgba(0,229,255,0.06),
       transparent 40%
     );
 
   background-attachment: fixed;
 }
 
+/* =====================================
+   GLOBAL SECTION SPACING
+===================================== */
+
 section {
   scroll-margin-top: 120px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 3rem;
 }
+
+@media (min-width: 768px) {
+  section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  section {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+/* =====================================
+   LINKS
+===================================== */
 
 a {
   text-decoration: none;
 }
 
+/* =====================================
+   IMAGES
+===================================== */
+
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
-/* Scrollbar */
+/* =====================================
+   CONTAINER
+===================================== */
 
-::-webkit-scrollbar {
-  width: 8px;
+.container-width {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
-::-webkit-scrollbar-track {
-  background: #050505;
+/* =====================================
+   HEADINGS
+===================================== */
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    to bottom,
-    #ff1744,
-    #00e5ff
-  );
-
-  border-radius: 20px;
+h2 {
+  letter-spacing: -1px;
 }
 
-/* Glass Cards */
+/* =====================================
+   PARAGRAPHS
+===================================== */
+
+p {
+  line-height: 1.8;
+}
+
+/* =====================================
+   GLASS
+===================================== */
 
 .glass {
   background: rgba(255,255,255,0.03);
@@ -103,23 +143,14 @@ img {
     0 0 40px rgba(255,23,68,.08);
 }
 
-/* Layout */
-
-.container-width {
-  max-width: 1280px;
-  margin: auto;
-}
-
-/* Terminal Styling */
+/* =====================================
+   TERMINAL
+===================================== */
 
 .terminal {
   font-family:
     "JetBrains Mono",
     monospace;
-}
-
-.terminal-green {
-  color: #22c55e;
 }
 
 .terminal-red {
@@ -130,7 +161,13 @@ img {
   color: #00e5ff;
 }
 
-/* Hacker Grid */
+.terminal-green {
+  color: #22c55e;
+}
+
+/* =====================================
+   GRID
+===================================== */
 
 .grid-bg {
   background-image:
@@ -147,38 +184,16 @@ img {
   background-size: 40px 40px;
 }
 
-/* Animated Glow */
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow:
-      0 0 10px rgba(255,23,68,.2);
-  }
-
-  50% {
-    box-shadow:
-      0 0 35px rgba(255,23,68,.45);
-  }
-
-  100% {
-    box-shadow:
-      0 0 10px rgba(255,23,68,.2);
-  }
-}
-
-.glow-red {
-  animation:
-    pulseGlow 3s infinite;
-}
-
-/* Text Gradient */
+/* =====================================
+   TEXT GRADIENT
+===================================== */
 
 .gradient-text {
   background:
     linear-gradient(
       90deg,
       #ff1744,
-      #ff4d6d,
+      #ff5f7e,
       #00e5ff
     );
 
@@ -186,24 +201,64 @@ img {
   -webkit-text-fill-color: transparent;
 }
 
-/* Selection */
+/* =====================================
+   SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      to bottom,
+      #ff1744,
+      #00e5ff
+    );
+
+  border-radius: 20px;
+}
+
+/* =====================================
+   TEXT SELECTION
+===================================== */
 
 ::selection {
-  background: rgba(
-    255,
-    23,
-    68,
-    0.35
-  );
+  background:
+    rgba(255,23,68,0.35);
 
   color: white;
 }
 
-/* Animations */
+/* =====================================
+   CARD HOVER
+===================================== */
+
+.card-hover {
+  transition:
+    all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 0 30px rgba(255,23,68,.15);
+}
+
+/* =====================================
+   FADE ANIMATION
+===================================== */
 
 .fade-up {
   animation:
-    fadeUp 0.7s ease forwards;
+    fadeUp .8s ease forwards;
 }
 
 @keyframes fadeUp {

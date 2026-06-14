@@ -1,52 +1,47 @@
 function BackgroundEffects() {
   return (
     <>
-      {/* Main Background */}
-      <div className="fixed inset-0 bg-[#050505] -z-50" />
+      <div className="fixed inset-0 bg-[#020202] -z-50" />
 
-      {/* Grid Overlay */}
       <div
         className="
         fixed
         inset-0
-        opacity-[0.06]
+        opacity-[0.04]
         -z-40
-        bg-[linear-gradient(rgba(0,229,255,.6)_1px,transparent_1px),linear-gradient(90deg,rgba(0,229,255,.6)_1px,transparent_1px)]
-        bg-[size:50px_50px]
-        "
+        bg-[linear-gradient(rgba(255,0,60,.6)_1px,transparent_1px),linear-gradient(90deg,rgba(255,0,60,.6)_1px,transparent_1px)]
+        bg-[size:60px_60px]
+      "
       />
 
-      {/* Cyan Orb */}
       <div
         className="
         fixed
         top-0
         left-0
-        w-[500px]
-        h-[500px]
-        bg-cyan-500/10
+        w-[600px]
+        h-[600px]
+        bg-red-500/10
         rounded-full
-        blur-[180px]
+        blur-[220px]
         -z-30
-        "
+      "
       />
 
-      {/* Violet Orb */}
       <div
         className="
         fixed
         bottom-0
         right-0
-        w-[500px]
-        h-[500px]
-        bg-violet-500/10
+        w-[600px]
+        h-[600px]
+        bg-cyan-500/10
         rounded-full
-        blur-[180px]
+        blur-[220px]
         -z-30
-        "
+      "
       />
 
-      {/* Center Glow */}
       <div
         className="
         fixed
@@ -54,13 +49,13 @@ function BackgroundEffects() {
         left-1/2
         -translate-x-1/2
         -translate-y-1/2
-        w-[700px]
-        h-[700px]
-        bg-cyan-500/[0.03]
+        w-[900px]
+        h-[900px]
+        bg-red-500/[0.03]
         rounded-full
-        blur-[250px]
+        blur-[280px]
         -z-30
-        "
+      "
       />
     </>
   );

@@ -18,6 +18,7 @@ function Navbar() {
     const handleScroll = () => {
       navItems.forEach((item) => {
         const section = document.getElementById(item);
+
         if (!section) return;
 
         const top = section.offsetTop - 150;
@@ -32,7 +33,10 @@ function Navbar() {
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
 
     return () =>
       window.removeEventListener(
@@ -45,7 +49,7 @@ function Navbar() {
     <nav
       className="
       fixed
-      top-4
+      top-5
       left-1/2
       -translate-x-1/2
       z-50
@@ -55,35 +59,37 @@ function Navbar() {
     >
       <div
         className="
-        bg-black/80
-        backdrop-blur-xl
+        bg-black/85
+        backdrop-blur-2xl
         border
-        border-cyan-500/30
+        border-red-500/20
         rounded-2xl
         px-8
         py-4
         flex
         justify-between
         items-center
-        shadow-[0_0_40px_rgba(0,255,255,0.15)]
+        shadow-[0_0_40px_rgba(255,0,60,0.15)]
       "
       >
         <a
           href="#home"
           className="
+          font-black
           text-xl
           font-mono
-          font-bold
         "
         >
-          <span className="text-cyan-400">{">"}</span>
-          <span className="text-cyan-300">
-            {" "}
+          <span className="text-red-500">
+            root@
+          </span>
+
+          <span className="text-white">
             pratham
           </span>
-          <span className="text-violet-400">
-            {" "}
-            @ ai-lab
+
+          <span className="text-cyan-400">
+            :~/portfolio
           </span>
         </a>
 
@@ -91,7 +97,7 @@ function Navbar() {
           className="
           hidden
           lg:flex
-          gap-8
+          gap-4
           font-mono
         "
         >
@@ -100,16 +106,20 @@ function Navbar() {
               key={item}
               href={`#${item}`}
               className={`
-              transition-all
-              duration-300
-              ${
-                active === item
-                  ? "text-cyan-400 bg-cyan-500/10 px-4 py-2 rounded-lg"
-                  : "text-gray-400 hover:text-white"
-              }
-            `}
+                px-4
+                py-2
+                rounded-xl
+                transition-all
+                duration-300
+
+                ${
+                  active === item
+                    ? "bg-red-500/15 text-red-400 border border-red-500/20"
+                    : "text-gray-400 hover:text-white"
+                }
+              `}
             >
-              ~/{item}
+              {item}
             </a>
           ))}
         </div>

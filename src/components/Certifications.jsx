@@ -1,53 +1,48 @@
 import { motion } from "framer-motion";
 
-const certifications = [
+const certificationGroups = [
   {
-    title: "Prompt Engineering Specialization",
-    issuer: "Coursera",
+    category: "Artificial Intelligence & Generative AI",
+    certifications: [
+      "Prompt Engineering Specialization",
+      "Programming with Generative AI",
+      "Generative AI Primer",
+      "Qoherenz Internship Program 2025",
+    ],
+    issuer: "Coursera • Qoherenz",
   },
 
   {
-    title: "Programming with Generative AI",
-    issuer: "Coursera",
+    category: "Data Science & Analytics",
+    certifications: [
+      "Data Analysis with Python",
+      "Data Management & Visualization",
+      "Exploring Data Transformation with Google",
+    ],
+    issuer: "Coursera • Google",
   },
 
   {
-    title: "Generative AI Primer",
-    issuer: "Coursera",
-  },
-
-  {
-    title: "Data Analysis with Python",
-    issuer: "Coursera",
-  },
-
-  {
-    title: "Data Management & Visualization",
-    issuer: "Coursera",
-  },
-
-  {
-    title: "Cyber Security: Data & Identity Security",
-    issuer: "Coursera",
-  },
-
-  {
-    title: "Innovating with Google Cloud AI",
+    category: "Cloud Computing",
+    certifications: [
+      "Innovating with Google Cloud AI",
+    ],
     issuer: "Google Cloud",
   },
 
   {
-    title: "Exploring Data Transformation with Google",
-    issuer: "Google",
+    category: "Cyber Security",
+    certifications: [
+      "Cyber Security: Data & Identity Security",
+    ],
+    issuer: "Coursera",
   },
 
   {
-    title: "Qoherenz Internship Program 2025",
-    issuer: "Qoherenz",
-  },
-
-  {
-    title: "Guesss India Campus Ambassador",
+    category: "Leadership & Outreach",
+    certifications: [
+      "Guesss India Campus Ambassador",
+    ],
     issuer: "Guesss India",
   },
 ];
@@ -56,42 +51,59 @@ function Certifications() {
   return (
     <section
       id="certifications"
-      className="py-28 px-6"
+      className="py-24"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container-width">
 
-        <p className="font-mono text-cyan-400 mb-3">
-          $ ls certifications/
-        </p>
+        <div className="text-center mb-20">
 
-        <h2
-          className="
-          text-5xl
-          md:text-6xl
-          font-black
-          font-mono
-          mb-16
-          bg-gradient-to-r
-          from-red-500
-          via-pink-500
-          to-violet-500
-          text-transparent
-          bg-clip-text
-        "
-        >
-          Certifications
-        </h2>
+          <p className="font-mono text-cyan-400 mb-4">
+            $ ls certifications/
+          </p>
+
+          <h2
+            className="
+            text-5xl
+            md:text-7xl
+            font-black
+            mb-6
+            bg-gradient-to-r
+            from-red-500
+            via-pink-500
+            to-cyan-400
+            text-transparent
+            bg-clip-text
+          "
+          >
+            Certifications
+          </h2>
+
+          <p
+            className="
+            text-gray-400
+            max-w-3xl
+            mx-auto
+            text-lg
+          "
+          >
+            Professional certifications and training
+            across Artificial Intelligence, Machine Learning,
+            Data Science, Cloud Computing, Cyber Security
+            and Technical Leadership.
+          </p>
+
+        </div>
 
         <div
           className="
           grid
           md:grid-cols-2
-          lg:grid-cols-3
           gap-8
         "
         >
-          {certifications.map(
-            (cert, index) => (
+
+          {certificationGroups.map(
+            (group, index) => (
               <motion.div
                 key={index}
                 initial={{
@@ -106,65 +118,84 @@ function Certifications() {
                   once: true,
                 }}
                 transition={{
-                  delay:
-                    index * 0.05,
+                  delay: index * 0.08,
                 }}
                 className="
                 bg-black/70
                 backdrop-blur-xl
                 border
-                border-cyan-500/20
-                rounded-2xl
-                p-6
-                hover:border-red-500/40
-                hover:-translate-y-2
+                border-red-500/20
+                rounded-3xl
+                p-8
+                hover:border-red-500/50
+                hover:-translate-y-1
                 transition-all
                 duration-300
               "
               >
+
                 <div
                   className="
-                  text-red-400
-                  font-mono
-                  mb-4
+                  w-12
+                  h-1
+                  bg-gradient-to-r
+                  from-red-500
+                  to-cyan-400
+                  mb-6
                 "
-                >
-                  CERT
-                </div>
+                />
 
                 <h3
                   className="
-                  text-xl
+                  text-2xl
                   font-bold
-                  mb-4
-                  leading-snug
+                  mb-3
+                  text-white
                 "
                 >
-                  {cert.title}
+                  {group.category}
                 </h3>
 
                 <p
                   className="
                   text-cyan-400
                   font-mono
+                  text-sm
+                  mb-6
                 "
                 >
-                  {cert.issuer}
+                  {group.issuer}
                 </p>
 
-                <div
-                  className="
-                  mt-6
-                  text-gray-500
-                  font-mono
-                  text-sm
-                "
-                >
-                  verified credential
+                <div className="space-y-3">
+
+                  {group.certifications.map(
+                    (cert) => (
+                      <div
+                        key={cert}
+                        className="
+                        flex
+                        items-start
+                        gap-3
+                      "
+                      >
+                        <span className="text-red-400">
+                          ✓
+                        </span>
+
+                        <span className="text-gray-300">
+                          {cert}
+                        </span>
+                      </div>
+                    )
+                  )}
+
                 </div>
+
               </motion.div>
             )
           )}
+
         </div>
 
       </div>

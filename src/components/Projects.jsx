@@ -6,40 +6,40 @@ const projects = [
     title:
       "Machine Learning-Based Surrogate Modeling for Continuous Casting Temperature Prediction",
     category: "Research Project",
+
     description:
-      "Developed high-performance surrogate models to predict thermal behavior in continuous casting processes using machine learning. Trained and evaluated XGBoost, Support Vector Regression (SVR), and Gaussian Process Regression (GPR) on 15,952+ simulation samples generated through COMSOL Multiphysics.",
+      "Developed machine learning surrogate models to predict thermal behavior in continuous casting processes using XGBoost, Support Vector Regression (SVR) and Gaussian Process Regression (GPR). Trained and evaluated models on 15,952+ simulation samples generated through COMSOL Multiphysics, enabling faster and more efficient thermal prediction compared to conventional simulation approaches.",
+
     technologies: [
       "Python",
+      "Machine Learning",
       "XGBoost",
       "SVR",
       "GPR",
-      "Machine Learning",
       "COMSOL",
       "Data Analysis",
       "Scientific Computing",
     ],
-    github: "#",
-    report: "#",
   },
 
   {
     featured: false,
-    title:
-      "Customer Review Intelligence System",
+    title: "Customer Review Intelligence System",
+
     category: "Generative AI Project",
+
     description:
-      "Built a multi-agent AI platform that analyzes customer reviews, extracts sentiment, identifies business trends, and generates actionable insights using LLMs and Retrieval-Augmented Generation workflows.",
+      "Built a multi-agent AI platform capable of analyzing customer reviews, identifying sentiment patterns, extracting business insights and generating actionable recommendations using modern LLM workflows, Retrieval-Augmented Generation and intelligent agent orchestration.",
+
     technologies: [
       "Generative AI",
       "LLMs",
       "RAG",
       "Agentic AI",
-      "LangChain",
       "Prompt Engineering",
       "Python",
+      "LangChain",
     ],
-    github: "#",
-    report: "#",
   },
 ];
 
@@ -47,31 +47,48 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="py-28 px-6"
+      className="py-24"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="container-width">
 
-        <p className="font-mono text-cyan-400 mb-3">
-          $ ls projects/
-        </p>
+        <div className="text-center mb-20">
 
-        <h2
-          className="
-          text-5xl
-          md:text-6xl
-          font-black
-          font-mono
-          mb-16
-          bg-gradient-to-r
-          from-red-500
-          via-pink-500
-          to-violet-500
-          text-transparent
-          bg-clip-text
-        "
-        >
-          Featured Projects
-        </h2>
+          <p className="font-mono text-cyan-400 mb-4">
+            $ ls projects/
+          </p>
+
+          <h2
+            className="
+            text-5xl
+            md:text-7xl
+            font-black
+            mb-6
+            bg-gradient-to-r
+            from-red-500
+            via-pink-500
+            to-cyan-400
+            text-transparent
+            bg-clip-text
+          "
+          >
+            Research & AI Projects
+          </h2>
+
+          <p
+            className="
+            text-gray-400
+            max-w-3xl
+            mx-auto
+            text-lg
+          "
+          >
+            A collection of research-driven and
+            AI-powered projects focused on machine
+            learning, scientific computing,
+            intelligent automation and generative AI.
+          </p>
+
+        </div>
 
         {/* Featured Project */}
 
@@ -88,44 +105,63 @@ function Projects() {
             once: true,
           }}
           className="
-          mb-10
+          relative
+          mb-12
           bg-black/70
           backdrop-blur-xl
           border
-          border-red-500/30
+          border-red-500/20
           rounded-3xl
-          p-10
-          shadow-[0_0_50px_rgba(255,0,60,0.15)]
+          p-8
+          md:p-10
+          hover:border-red-500/50
+          transition-all
+          duration-300
         "
         >
-          <div className="flex flex-wrap gap-3 mb-5">
+
+          <div
+            className="
+            absolute
+            left-0
+            top-0
+            bottom-0
+            w-1
+            rounded-l-3xl
+            bg-gradient-to-b
+            from-red-500
+            to-cyan-400
+          "
+          />
+
+          <div className="flex flex-wrap gap-3 mb-6">
 
             <span
               className="
               px-4
               py-2
-              rounded-lg
+              rounded-xl
               bg-red-500/10
               text-red-400
-              font-mono
               text-sm
+              font-mono
             "
             >
-              ★ FEATURED RESEARCH
+              FEATURED RESEARCH
             </span>
 
             <span
               className="
               px-4
               py-2
-              rounded-lg
+              rounded-xl
               bg-cyan-500/10
               text-cyan-400
-              font-mono
               text-sm
+              font-mono
             "
             >
-              RESEARCH
+              MACHINE LEARNING
             </span>
 
           </div>
@@ -136,6 +172,7 @@ function Projects() {
             md:text-4xl
             font-bold
             mb-6
+            text-white
           "
           >
             {projects[0].title}
@@ -144,8 +181,8 @@ function Projects() {
           <p
             className="
             text-gray-400
-            leading-relaxed
             text-lg
+            leading-relaxed
           "
           >
             {projects[0].description}
@@ -166,12 +203,13 @@ function Projects() {
                   className="
                   px-4
                   py-2
-                  rounded-lg
+                  rounded-xl
                   border
                   border-red-500/30
+                  bg-red-500/5
                   text-red-400
-                  font-mono
                   text-sm
+                  font-mono
                 "
                 >
                   {tech}
@@ -180,189 +218,105 @@ function Projects() {
             )}
           </div>
 
-          <div
-            className="
-            flex
-            flex-wrap
-            gap-5
-            mt-8
-          "
-          >
-            <a
-              href={projects[0].github}
-              target="_blank"
-              rel="noreferrer"
-              className="
-              px-6
-              py-3
-              rounded-xl
-              bg-red-600
-              hover:bg-red-500
-              transition
-            "
-            >
-              View GitHub
-            </a>
-
-            <a
-              href={projects[0].report}
-              target="_blank"
-              rel="noreferrer"
-              className="
-              px-6
-              py-3
-              rounded-xl
-              border
-              border-cyan-500/40
-              hover:bg-cyan-500/10
-            "
-            >
-              View Report
-            </a>
-          </div>
-
         </motion.div>
 
         {/* Other Projects */}
 
-        <div
-          className="
-          grid
-          md:grid-cols-2
-          gap-8
-        "
-        >
+        <div className="grid md:grid-cols-2 gap-8">
+
           {projects
             .slice(1)
-            .map(
-              (
-                project,
-                index
-              ) => (
-                <motion.div
-                  key={index}
-                  initial={{
-                    opacity: 0,
-                    y: 40,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                  }}
+            .map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                className="
+                bg-black/70
+                backdrop-blur-xl
+                border
+                border-cyan-500/20
+                rounded-3xl
+                p-8
+                hover:border-cyan-500/50
+                transition-all
+                duration-300
+              "
+              >
+
+                <p
                   className="
-                  bg-black/70
-                  backdrop-blur-xl
-                  border
-                  border-cyan-500/20
-                  rounded-2xl
-                  p-8
-                  hover:border-red-500/40
-                  transition-all
+                  text-cyan-400
+                  font-mono
+                  text-sm
+                  mb-4
                 "
                 >
-                  <p
-                    className="
-                    text-cyan-400
-                    font-mono
-                    text-sm
-                    mb-4
-                  "
-                  >
-                    {project.category}
-                  </p>
+                  {project.category}
+                </p>
 
-                  <h3
-                    className="
-                    text-2xl
-                    font-bold
-                    mb-4
-                  "
-                  >
-                    {project.title}
-                  </h3>
+                <h3
+                  className="
+                  text-2xl
+                  font-bold
+                  mb-5
+                  text-white
+                "
+                >
+                  {project.title}
+                </h3>
 
-                  <p
-                    className="
-                    text-gray-400
-                    leading-relaxed
-                  "
-                  >
-                    {project.description}
-                  </p>
+                <p
+                  className="
+                  text-gray-400
+                  leading-relaxed
+                "
+                >
+                  {project.description}
+                </p>
 
-                  <div
-                    className="
-                    flex
-                    flex-wrap
-                    gap-3
-                    mt-6
-                  "
-                  >
-                    {project.technologies.map(
-                      (
-                        tech
-                      ) => (
-                        <span
-                          key={tech}
-                          className="
-                          px-3
-                          py-2
-                          rounded-lg
-                          border
-                          border-cyan-500/30
-                          text-cyan-400
-                          font-mono
-                          text-sm
-                        "
-                        >
-                          {tech}
-                        </span>
-                      )
-                    )}
-                  </div>
+                <div
+                  className="
+                  flex
+                  flex-wrap
+                  gap-3
+                  mt-6
+                "
+                >
+                  {project.technologies.map(
+                    (tech) => (
+                      <span
+                        key={tech}
+                        className="
+                        px-3
+                        py-2
+                        rounded-xl
+                        border
+                        border-cyan-500/30
+                        bg-cyan-500/5
+                        text-cyan-400
+                        text-sm
+                        font-mono
+                      "
+                      >
+                        {tech}
+                      </span>
+                    )
+                  )}
+                </div>
 
-                  <div
-                    className="
-                    flex
-                    gap-4
-                    mt-8
-                  "
-                  >
-                    <a
-                      href={
-                        project.github
-                      }
-                      target="_blank"
-                      rel="noreferrer"
-                      className="
-                      text-red-400
-                      hover:text-red-300
-                    "
-                    >
-                      GitHub →
-                    </a>
+              </motion.div>
+            ))}
 
-                    <a
-                      href={
-                        project.report
-                      }
-                      target="_blank"
-                      rel="noreferrer"
-                      className="
-                      text-cyan-400
-                      hover:text-cyan-300
-                    "
-                    >
-                      Report →
-                    </a>
-                  </div>
-
-                </motion.div>
-              )
-            )}
         </div>
 
       </div>
